@@ -1,0 +1,14 @@
+{
+	"name": "booksInTerminalApp",
+	"version": "1.0.0",
+	"description": "Um app no terminal para listar livros",
+	"main": "app.js",
+	"scripts": {
+		"start": "node app.js"
+	},
+	"author": "LeoMSSilva",
+	"license": "ISC",
+	"dependencies": {
+		"readline-sync": "^1.4.10"
+	}
+}

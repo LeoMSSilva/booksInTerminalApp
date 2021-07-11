@@ -1,0 +1,58 @@
+const books = [
+	{
+		id: 1,
+		name: 'Digital Minimalism',
+		author: 'Cal Newport',
+		category: 'Produtividade',
+		pages: 254,
+		recommends: false,
+		read: false,
+	},
+	{
+		id: 2,
+		name: 'O poder da ação',
+		author: 'Paulo Vieira',
+		category: 'Produtividade',
+		pages: 250,
+		recommends: true,
+		read: true,
+	},
+	{
+		id: 3,
+		name: 'O milagre da manhã: O segredo para transformar sua vida',
+		author: 'Marcelo Schild',
+		category: 'Produtividade',
+		pages: 196,
+		recommends: true,
+		read: false,
+	},
+	{
+		id: 4,
+		name: 'Algoritmos para viver',
+		author: 'Brian Christian',
+		category: 'Tecnologia',
+		pages: 412,
+		recommends: false,
+		read: false,
+	},
+	{
+		id: 5,
+		name: 'Thinking, fast and slow',
+		author: 'Daniel Kahneman',
+		category: 'Estilo de vida',
+		pages: 418,
+		recommends: false,
+		read: false,
+	},
+	{
+		id: 6,
+		name: 'Padrões Javascript',
+		author: 'Stoyan Stefanov',
+		category: 'Tecnologia',
+		pages: 231,
+		recommends: false,
+		read: false,
+	},
+];
+
+module.exports = books;
