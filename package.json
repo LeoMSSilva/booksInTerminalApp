@@ -1,7 +1,7 @@
 {
 	"name": "booksInTerminalApp",
 	"version": "1.0.0",
-	"description": "Um app no terminal para listar livros",
+	"description": "A terminal app to list books",
 	"main": "app.js",
 	"scripts": {
 		"start": "node app.js"
