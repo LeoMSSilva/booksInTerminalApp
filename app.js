@@ -2,7 +2,11 @@ const books = require('./database');
 const readline = require('readline-sync');
 
 let result = books;
-const categories = [' Estilo de vida', ' Produtividade', ' Tecnologia'];
+
+const categories = books.map((books) => ` ${books.category}`);
+const myCategories = categories
+	.filter((category, index) => index == categories.indexOf(category))
+	.sort();
 const read = (message) => readline.question(message + '\n');
 const print = (message) => console.log(message + '\n');
 const ordeneBooks = (books) => books.sort((a, b) => a.pages - b.pages);
@@ -19,7 +23,7 @@ let response = read('Possui uma categoria específica? S/N');
 
 console.clear();
 if (response.toLocaleUpperCase() === 'S') {
-	print('Categorias disponíveis:' + categories);
+	print('Categorias disponíveis:' + myCategories);
 	response = read('Qual você escolhe?');
 
 	result = books.filter(
