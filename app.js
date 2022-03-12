@@ -1,22 +1,36 @@
 const books = require('./database');
 const readline = require('readline-sync');
-let result;
 
-const inputStart = readline.question(
-	'Deseja buscar livros duma categoria específica? S/N\n',
-);
+let result = books;
+const categories = [' Estilo de vida', ' Produtividade', ' Tecnologia'];
+const read = (message) => readline.question(message + '\n');
+const print = (message) => console.log(message + '\n');
+const ordeneBooks = (books) => books.sort((a, b) => a.pages - b.pages);
+const printBooks = (message, result) => {
+	console.clear();
+	print(message);
+	result = ordeneBooks(result);
+	console.table(result, ['name', 'author', 'category', 'pages']);
+};
 
-if (inputStart.toLocaleUpperCase() === 'S') {
-	console.log('\nCategorias disponíveis:');
-	console.log('Estilo de vida, Produtividade, Tecnologia\n');
-	const inputCategory = readline.question('Qual você escolhe?\n');
-	
+console.clear();
+print('Vamos buscar livros juntos?');
+let response = read('Possui uma categoria específica? S/N');
+
+console.clear();
+if (response.toLocaleUpperCase() === 'S') {
+	print('Categorias disponíveis:' + categories);
+	response = read('Qual você escolhe?');
+
 	result = books.filter(
 		(book) =>
-			book.category.toLocaleUpperCase() === inputCategory.toLocaleUpperCase(),
+			book.category.toLocaleUpperCase() === response.toLocaleUpperCase(),
 	);
+
+	console.clear();
+	result.length == 0
+		? print('A categoria seleciona não possui livros cadastrados!')
+		: printBooks('Esses são todos os livros da sua categoria:', result);
 } else {
-	console.log('\nEsses são todos os livros disponíveis:');
-	result = books.sort((a, b) => a.pages - b.pages);
+	printBooks('Esses são todos os livros disponíveis:', result);
 }
-console.table(result, ['name', 'author', 'category', 'pages']);
