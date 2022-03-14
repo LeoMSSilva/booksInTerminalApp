@@ -1,5 +1,7 @@
 <h1 align="center">booksInTerminalApp
 	<br/>
+	<img src="./booksInTerminalApp.png">
+	<br/>
 </h1>
 
 [![Author](https://img.shields.io/badge/author-LeoMSSilva-blue?style=flat-square)](https://github.com/LeoMSSilva)
